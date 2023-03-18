@@ -1,20 +1,43 @@
-class Address:
-    def __init__(self, street, city, state, zipcode, street2=''):
-        self.street = street
-        self.street2 = street2
-        self.city = city
-        self.state = state
-        self.zipcode = zipcode
+# Source: ChatGPT
 
-    def __str__(self):
-        lines = [self.street]
-        if self.street2:
-            lines.append(self.street2)
-        lines.append(f'{self.city}, {self.state} {self.zipcode}')
-        return '\n'.join(lines)
-    
+class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+
+    def start(self):
+        print("Engine started")
+
+class Transmission:
+    def __init__(self, num_gears):
+        self.num_gears = num_gears
+
+    def shift_up(self):
+        print("Shifting up")
+
+    def shift_down(self):
+        print("Shifting down")
+
+class Car:
+    def __init__(self, engine_horsepower, transmission_num_gears):
+        self.engine = Engine(engine_horsepower)
+        self.transmission = Transmission(transmission_num_gears)
+
+    def start(self):
+        self.engine.start()
+        print("Car started")
+
+    def accelerate(self):
+        self.transmission.shift_up()
+        print("Accelerating")
+
+    def brake(self):
+        self.transmission.shift_down()
+        print("Braking")
+
 
 if __name__ == "__main__":
-    from contacts import Address
-    address = Address('55 Main St.', 'Concord', 'NH', '03301')
-    print(address)
+    my_car = Car(engine_horsepower=200, transmission_num_gears=6)
+    my_car.start()
+    my_car.accelerate()
+    my_car.brake()
+    
