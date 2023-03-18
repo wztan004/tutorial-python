@@ -1,11 +1,13 @@
-# https://realpython.com/python3-object-oriented-programming/
-
+# WHAT IT COVERS:
 # Inheritance
 # __str__ representation
 # Check parent class instance
 # Check child class instance
 # Method override
 # Argument override
+
+# Reference https://realpython.com/python3-object-oriented-programming/
+
 
 class Dog:
     species = "Canis familiaris"
